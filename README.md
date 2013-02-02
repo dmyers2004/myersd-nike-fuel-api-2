@@ -13,10 +13,10 @@ add your token from the Nike Developer Site
 $token = ''; // Your Token
 
 Create the Class
-  $np = new nikeplusapi($token);
+$np = new nikeplusapi($token);
 	
 Prep the Browser for print_r
-echo '<pre>';
+echo '&lt;pre&gt;';
 
 Sport will get your sports (see the nike API)
 print_r($np->sport());
@@ -29,3 +29,5 @@ print_r($np->activity(2095521418));
 
 Get GPS data if available on a Activity
 print_r($np->gps(2095521418));
+
+[http://developer.nike.com](http://developer.nike.com)
