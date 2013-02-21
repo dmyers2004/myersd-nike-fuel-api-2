@@ -68,10 +68,13 @@ class nikeplusapi {
 	private function _get($url='',$fields=array()) {
 		$fields['access_token'] = $this->token;
 		
+		$fields_string = '';
+		
 		foreach($fields as $key=>$value) {
 			$fields_string .= $key.'='.$value.'&';
 		}
-		rtrim($fields_string, '&');
+		
+		$fields_string = rtrim($fields_string,'&');
 		
 		$ch = curl_init();
 
@@ -94,5 +97,16 @@ class nikeplusapi {
 		$err->errMsg = $msg;
 		return $err;
 	}
+
+	private function mylogger($v,$name='logname',$new=false) {
+		$path = '/Users/myersd/Desktop/';
+		$flag = ($new) ? 'w' : 'a';
+		if ($log_handle = fopen($path.$name.'.log',$flag)) {
+			fwrite($log_handle,$v.chr(10));
+			fclose($log_handle);
+		}
+	}
+
+
 
 }
