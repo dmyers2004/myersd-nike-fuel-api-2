@@ -24,6 +24,8 @@ print_r($np->sport());
 Activities returns all of your activities options include Page and the number of products (see the nike API)
 print_r($np->activities());
 
+(I spoke to Nike and they are aware that at this time pagination doesn't work - anything over page 0 returns nothing)
+
 Get specifics on a Activity
 print_r($np->activity(2095521418));
 
